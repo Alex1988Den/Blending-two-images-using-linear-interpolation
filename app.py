@@ -1,19 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
-import random
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications import VGG19
 from tensorflow.keras import backend as K
 from werkzeug.utils import secure_filename
+import matplotlib.pyplot as plt
 
 # Создание Flask-приложения
 app = Flask(__name__)
 
-# Пути к данным (сделайте папки для сохранения изображений)
-train_dir = "C:/Users/user/Downloads/datasets/impressionist/training/training"
-val_dir = "C:/Users/user/Downloads/datasets/impressionist/validation/validation"
+# Пути к данным
 upload_folder = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = upload_folder
 app.config['ALLOWED_EXTENSIONS'] = {'jpg', 'jpeg', 'png'}
@@ -89,7 +87,7 @@ def index():
             # Оптимизатор
             opt = tf.optimizers.Adam(learning_rate=0.02)
 
-            # Функция для обучения
+            # Функция для тренировки (для переноса стиля)
             def train_step(model, content_image, style_image, generated_image):
                 with tf.GradientTape() as tape:
                     outputs = model(generated_image)
@@ -104,7 +102,7 @@ def index():
                 opt.apply_gradients([(grads, generated_image)])
                 return total_loss
 
-            # Проводим обучение
+            # Проводим обучение (перенос стиля)
             for epoch in range(10):  # 10 эпох для примера
                 train_step(model, content_img, style_img, generated_image)
 
