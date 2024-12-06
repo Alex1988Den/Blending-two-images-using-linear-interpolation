@@ -7,9 +7,11 @@ from tensorflow.keras.applications import VGG19
 from tensorflow.keras import backend as K
 from werkzeug.utils import secure_filename
 import matplotlib.pyplot as plt
+from flask_ngrok import run_with_ngrok
 
 # Создание Flask-приложения
 app = Flask(__name__)
+run_with_ngrok(app)  # Добавляем поддержку ngrok для работы Flask через интернет
 
 # Пути к данным
 upload_folder = 'static/uploads'
