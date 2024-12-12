@@ -9,7 +9,7 @@
     <h1>Blended Images</h1>
     <div>
         {% for image in images %}
-            <img src="{{ image }}" alt="Blended Image">
+            <img src="{{ url_for('send_image', filename=image.split('/')[-1]) }}" alt="Blended Image">
         {% endfor %}
     </div>
 </body>
