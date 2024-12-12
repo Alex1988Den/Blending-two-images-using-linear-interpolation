@@ -4,38 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blended Images</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        img {
-            margin-top: 20px;
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-        }
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .image-container img {
-            margin: 10px;
-        }
-    </style>
 </head>
 <body>
     <h1>Blended Images</h1>
-    <div class="image-container">
-        {% for img in images %}
-            <img src="{{ img }}" alt="Blended Image">
+    <div>
+        {% for image in images %}
+            <img src="{{ image }}" alt="Blended Image">
         {% endfor %}
     </div>
-    <a href="/">Go Back</a>
 </body>
 </html>
