@@ -29,29 +29,12 @@
         button:hover {
             background-color: #45a049;
         }
-        img {
-            margin-top: 20px;
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-        }
     </style>
 </head>
 <body>
     <h1>Style Transfer</h1>
-    <form action="/" method="post" enctype="multipart/form-data">
-        <label for="content_image">Content Image:</label>
-        <input type="file" name="content_image" required>
-        <br>
-        <label for="style_image">Style Image:</label>
-        <input type="file" name="style_image" required>
-        <br>
-        <button type="submit">Transfer Style</button>
+    <form action="/blend" method="post">
+        <button type="submit">Generate Blended Images</button>
     </form>
-    
-    {% if result %}
-    <h2>Result:</h2>
-    <img src="{{ result }}" alt="Result Image">
-    {% endif %}
 </body>
 </html>
