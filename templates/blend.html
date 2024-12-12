@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blended Images</title>
+</head>
+<body>
+    <h1>Blended Images</h1>
+    <div>
+        {% for img in images %}
+            <img src="{{ url_for('send_image', filename=img.split('/')[-1]) }}" alt="Blended Image" />
+        {% endfor %}
+    </div>
+    <a href="/">Back to Home</a>
+</body>
+</html>
