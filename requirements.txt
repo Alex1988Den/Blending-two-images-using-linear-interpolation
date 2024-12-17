@@ -1,4 +1,6 @@
-Flask==2.2.2
-numpy==1.23.4
-Pillow==9.0.0
-matplotlib==3.6.2
+Flask
+streamlit
+tensorflow
+numpy
+matplotlib
+pillow
