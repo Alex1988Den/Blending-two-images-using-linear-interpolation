@@ -2,12 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Image Blender</title>
 </head>
 <body>
-    <h1>Welcome to the Index Page</h1>
-    <a href="/blend">Go to Blended Images</a>
+    <h1>Добро пожаловать в Image Blender!</h1>
+    <p><a href="{{ url_for('blend') }}">Сгенерировать смешанные изображения</a></p>
+</body>
+</html> и blend с содержанием <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blended Images</title>
+</head>
+<body>
+    <h1>Результат смешивания изображений</h1>
+    {% for image in images %}
+        <img src="{{ url_for('static', filename='images/' + image) }}" alt="Blended Image">
+    {% endfor %}
+    <p><a href="{{ url_for('index') }}">Назад</a></p>
 </body>
 </html>
