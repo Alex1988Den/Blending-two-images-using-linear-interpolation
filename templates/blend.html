@@ -8,7 +8,7 @@
 <body>
     <h1>Blended Images</h1>
     {% for image in images %}
-        <img src="{{ url_for('static', filename=image) }}" alt="Blended Image">
+        <img src="{{ url_for('static', filename=image) }}" alt="Blended Image" width="300">
     {% endfor %}
 </body>
 </html>
