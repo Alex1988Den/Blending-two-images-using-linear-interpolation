@@ -6,6 +6,8 @@
 </head>
 <body>
     <h1>Добро пожаловать в Image Blender!</h1>
-    <p><a href="{{ url_for('blend') }}">Сгенерировать смешанные изображения</a></p>
+    <form action="{{ url_for('blend') }}" method="POST">
+        <button type="submit">Сгенерировать смешанные изображения</button>
+    </form>
 </body>
 </html>
