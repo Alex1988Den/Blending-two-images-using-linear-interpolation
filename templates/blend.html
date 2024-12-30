@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blended Images</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>Blended Images</h1>
-    <div>
-        {% for img in images %}
-            <img src="{{ url_for('static', filename=img) }}" alt="Blended Image">
-        {% endfor %}
-    </div>
+    <h1>Результат смешивания изображений</h1>
+    {% for image in images %}
+        <img src="{{ url_for('static', filename='images/' + image) }}" alt="Blended Image">
+    {% endfor %}
+    <p><a href="{{ url_for('index') }}">Назад</a></p>
 </body>
 </html>
