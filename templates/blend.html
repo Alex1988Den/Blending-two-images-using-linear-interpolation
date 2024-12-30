@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blended Images</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <h1>Blended Images</h1>
-    {% for image in images %}
-        <img src="{{ url_for('static', filename=image) }}" alt="Blended Image" width="300">
-    {% endfor %}
+    <div>
+        {% for img in images %}
+            <img src="{{ url_for('static', filename=img) }}" alt="Blended Image">
+        {% endfor %}
+    </div>
 </body>
 </html>
